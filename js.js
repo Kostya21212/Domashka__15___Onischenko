@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function () {
         const text = textInput.value.trim();
+        addButton.style.backgroundColor = 'green'
         if (text !== '') {
             addListItem(text);
             textInput.value = '';
