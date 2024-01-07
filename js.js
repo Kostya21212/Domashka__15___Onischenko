@@ -1,28 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const addButton = document.getElementById('buttonInput');
-    const textInput = document.getElementById('textInput');
-    const list = document.getElementById('list');
+const button = document.querySelector('.input-container button');
+const input = document.querySelector('.input-container input');
+const list = document.querySelector('.todo-list');
 
-    addButton.addEventListener('click', function () {
-        const text = textInput.value.trim();
-        addButton.style.backgroundColor = 'green'
-        if (text !== '') {
-            addListItem(text);
-            textInput.value = '';
-        }
-    });
-
-    list.addEventListener('click', function (event) {
-        if (event.target.classList.contains('deleteButton')) {
-            event.target.closest('li').remove();
-        }
-    });
-
-    function addListItem(text) {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-        <span>${text}</span>
-        <button class="deleteButton">X</button>`;
-        list.appendChild(listItem);
-    }
-});
+button.addEventListener('click', () => {
+    const inputValue =input.value.trim()
+    if(inputValue !== ''){
+    const li = document.createElement('li');
+    li.className = 'todo-list-item';
+    li.innerText = input.value
+    const deleteButton = document.createElement('button'); 
+    deleteButton.innerText = 'delete'
+    list.appendChild(li)
+    li.appendChild(deleteButton)
+    input.value = ''
+    deleteButton.addEventListener('click', () => {
+        if(confirm('Ви впевнені що хочете видалити цей елемент? ')){
+        list.removeChild(li)}
+    })
+}else{
+    alert('Введіть будь ласка щось!')
+}
+}
+)

@@ -1,64 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
-    background-color: bisque;
+html, body {
+    font-family: sans-serif;
+    height: 100%;
+    background-color: aquamarine;
 }
-#inputText {
-    background-color: #dd9119;
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    font-weight: 600;
-    border-radius: 8px;
-    
-}
-#app {
-    width: 300px;
-    text-align: center;
-}
-
-#textInput {
+.container{
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #ff6961;
-    border: 3px solid black;
-    color: white;
-    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
-
-ul {
-    list-style: none;
-    padding: 0;
+.todo-container{
+    width: 50%;
+    background-color: #0b1174;
+    height: 60%;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
 }
-
-li {
+.input-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
 }
-
-.deleteButton {
-    cursor: pointer;
-    background-color: #ff6961;
-    color: #fff;
+.input-container input{
+    width: calc(100% - 80px);
+    height: 30px;
+    outline-color: #fa06c1;
+}
+.input-container button{
+    background-color: green;
+    height: 36px;
     border: none;
-    padding: 5px 10px;
-    margin-left: 5px; 
-    border: 3px solid black
-}
-#buttonInput{
-    background-color: #ff6961;
+    cursor: pointer;
     color: white;
-    padding: 8px;
-    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-#buttonInput:hover{
-    background-color: aquamarine;
-    color: black;
+.todo-list{
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+.todo-list-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.todo-list-item button{
+    border-radius: 5px;
+    background-color: yellow;
+    border: none;
+    cursor: pointer;
 }
